@@ -10,18 +10,17 @@ S = x - x/2 + x/3 - x/4 + ... + (pow((-1), (n-1))) * x/n + ... + (abs(x)<1)
 #include <iostream>
 #include <cmath>
 
-using namespace std;
-int main(){
-    int e = 22;
-    int i = 0;
-    double x;
-    double t = 1;
-    double s = 1;
 
-    while (abs(t) > e) {
-        i += 1;
-        t += x - x/i;
-        s += t;
-    }
-    cout << s;
+using namespace std;
+int main() {
+	int x, counter = 1;
+	double eps, n, s = 0;
+	cin >> x >> eps;
+	do {
+		n = ((pow(-1, counter - 1)*x / double(counter)));
+		s += n;
+		counter += 1;
+	} while (abs(n) >= eps);
+	cout << s;
+	return 0;
 }
