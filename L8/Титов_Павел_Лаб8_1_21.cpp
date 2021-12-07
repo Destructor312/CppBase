@@ -29,7 +29,11 @@ int main() {
 
 long double fact(int N)
 {
-    if(N < 0) return 0;
-    if (N == 0) return 1;
-    else return N * fact(N - 1);
+    if (N < 0) return 0;
+
+    long double factorial = 1.0;
+    for(int i = 1; i <= N; ++i) {
+        factorial *= i;
+    }
+    return factorial;
 }
