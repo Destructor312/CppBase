@@ -12,8 +12,14 @@ using namespace std;
 int main(){
     vector<string> words;
     string word;
-    for (vector<string>::iterator it = words.begin(); it != words.end(); ++it) {
-        int found = it->find("мм");
-        if (found == string::npos) break;
+    cin >> word;
+    while (word != ".") {
+        if (word.find("мм") != string::npos)
+            words.push_back(word);
+        
+        cin >> word;
     }
+    cout << "Массив слов, содержащих мм: ";
+    for (vector<string>::iterator it = words.begin(); it!=words.end() ; ++it)
+        cout << *it << ", ";
 }
