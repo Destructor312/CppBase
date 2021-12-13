@@ -12,5 +12,5 @@ int main(){
     cin >> g1 >> g2 >> c1 >> c2;
     int dx = abs(g1 - g2);
     int dy = abs(c1 - c2);
-    cout << (dx == 1) and (dy == 2) or (dx == 2) and (dy == 1);
+    cout << (dx == 1) && (dy == 2) || (dx == 2) && (dy == 1);
 }

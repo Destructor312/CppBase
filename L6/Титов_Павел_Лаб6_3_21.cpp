@@ -17,7 +17,7 @@ int main(){
 
     cin >> n;
     
-    for (int i = 1; i <= n; i++){
+    for (int i = 1; i < n; i++){
         int j;
         cin >> j;
         if (n1 < j) {n3 = n2; n2 = n1; n1 = j;}

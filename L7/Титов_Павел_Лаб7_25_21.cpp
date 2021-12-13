@@ -12,7 +12,7 @@ int main(){
     bool flag = true;
     int Wc = 0, ic = 0, nc = 0, Cc = 0, tc = 0, rc = 0;
     int num;
-    cout << "Chouse loop;\n1: for\n2: while\n3: do while\n> ";
+    cout << "Choose loop;\n1: for\n2: while\n3: do while\n> ";
     cin >> num;
 
     switch (num)
