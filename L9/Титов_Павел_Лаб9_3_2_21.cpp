@@ -13,12 +13,7 @@
 #include <iostream>
 #include <vector>
 
-// void filling_the_array(vector<vector <int>> &omnitrix, int);
-// void editing_the_array(vector<vector <int>> &omnitrix, int);
-// void show_matrix(vector<vector <int>> &omnitrix, int);
-
 using namespace std;
-
 
 void filling_the_array(vector<vector <int>> &omnitrix, int k) {
     for (int i = 0; i < k; i++) {
@@ -57,15 +52,9 @@ int main() {
 	cin >> k;
 
 	vector <vector <int>> omnitrix(k, vector <int>(k));
-	// Заполнение нулями
 	filling_the_array(omnitrix, k);
-
-	// Заполнение нулями по шаблону
 	editing_the_array(omnitrix, k);
-
-    // Вывод на экран
 	show_matrix(omnitrix, k);
-
 	cout << endl;
 	return 0;
 }

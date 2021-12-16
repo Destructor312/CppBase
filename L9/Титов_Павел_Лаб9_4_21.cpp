@@ -8,30 +8,27 @@
 #include <iostream>
 #include <cmath>
 
-double fact(double);
-double get_a(double);
-double get_num(double, double);
-
 using namespace std;
+
+double fact(double N){
+    if(N < 0) return 0;
+    if (N == 0) return 1;
+    else return N * fact(N - 1);
+}
+
+double rec(double &summ, int n, double pre_a, double eps){
+    double a = (fact(n) / pow(5, n));
+    summ += a;
+    if (abs(pre_a - a) >= eps) return rec(summ, n++, a, eps);
+    else return summ;
+}
+
 int main(){
-    double n, eps;
-    cin >> n >> eps;
-    cout << get_num(n, eps);
-}
+    int n = 1;
+    double eps, s = 0;
 
-double fact(double n){
-    if (n < 0) return 0;
-    double s = 1.0;
-    for (int i = 1; i <= n; i++){
-        s *= i;
-    }
-    return s;
-}
-double get_a(double n){
-    return (fact(n) / pow(5, n));
-}
-
-double get_num(double n, double eps){
-    if (n < eps) return n;
-    return get_num(get_a(n), eps);
+    cout << "Введите точность Eps: ";
+    cin >> eps;
+    rec(s, n, 0, eps);
+    cout << "Сумма равна " << s;
 }

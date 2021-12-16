@@ -9,8 +9,8 @@
 #include <vector>
 
 using namespace std;
-int main(){
-    vector<string> words;
+
+void filling_the_array(vector<string> &words) {
     string word;
     cin >> word;
     while (word != ".") {
@@ -19,7 +19,14 @@ int main(){
         
         cin >> word;
     }
-    cout << "Массив слов, содержащих мм: ";
+}
+void print_array(vector<string> &words) {
     for (vector<string>::iterator it = words.begin(); it!=words.end() ; ++it)
         cout << *it << ", ";
+}
+int main(){
+    vector<string> words;
+    filling_the_array(words);
+    cout << "Массив слов, содержащих мм: ";
+    print_array(words);
 }

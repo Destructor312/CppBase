@@ -9,45 +9,50 @@
     4 – нахождение суммы элементов массива)
 2. Определите функции для каждой подзадачи
 3. Вызовите функции в нужном порядке для решения задачи.
+(8.1)
 */
 #include <iostream>
 #include <vector>
 
-void filling_the_array(int, int);
-void show_elements(int);
-int search_ans(int, int);
-
 using namespace std;
-int main() {
-    int n = 10; 
-    int x[n];
-    filling_the_array(x, n);
-    show_elements(x, n);
-    cout << search_ans(x, n);
+
+long double fact(int N)
+{
+    if (N < 0) return 0;
+
+    long double factorial = 1.0;
+    for(int i = 1; i <= N; ++i) {
+        factorial *= i;
+    }
+    return factorial;
 }
 
-void filling_the_array(int *x, int n) {
+void filling_the_array(vector<int> &x, int n) {
     srand(time(nullptr));
     for (int i = 0; i < n; i++){ 
-        x[i] = (rand() % 20 - 10);
+        x[i] = rand() % 10;
     }
 }
 
-int search_ans(int *x, int n){
-    int last_key = x[0];
-    int first_done = -1;
-
+double search_ans(vector<int> &x, int n){
+    double s = 0;
     for (int i = 1; i < n; i++){
-        if (last_key < 0 && x[i] == 0) { 
-            first_done = i; break;
-        }
-        last_key = x[i]; 
+        s += x[i-1] * fact(i);
     }
-    return first_done;
+    return s;
 }
 
-void show_elements(int *x, int n){
-    for (int i = 0; i < n; i++) {
+void show_elements(vector<int> &x, int n){
+    for (int i = 0; i < n; i++){ 
         cout << x[i] << " ";
     }
+}
+
+int main() {
+    int n = 5; 
+    vector<int> x(n);
+
+    filling_the_array(x, n);
+    show_elements(x, n);
+    cout << search_ans(x, n) << endl;
 }

@@ -23,8 +23,8 @@ int main()
     cin >> str1; // заполняем два массива в каждое пишем слово
     cin >> str2;
 
-    for (int i = 0; i < str1.length(); i++)          
-    {                                   
+    for (int i = 0; i < str1.length(); i++)
+    {
         b = false;
         for (int j = 0; j < str2.length(); j++)
         {
@@ -55,6 +55,7 @@ int main()
     for (vector<string>::iterator it = words.begin(); it!=words.end() ; ++it)
         cout << *it << ", ";
     cout << endl;
+    
     sort(words.begin(), words.end());
     words.erase(unique(words.begin(), words.end()), words.end());
 

@@ -16,6 +16,7 @@ using namespace std;
 int main() {
     const int n = 5; 
     vector<int> x(n);
+    
     for (int i = 0; i < n; i++){ 
         x[i] = rand() % 10;
     }
