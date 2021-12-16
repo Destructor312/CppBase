@@ -9,11 +9,24 @@
 #include <vector>
 
 using namespace std;
+
+void filling_the_array(vector<string> &words) {
+    string word;
+    cin >> word;
+    while (word != ".") {
+        if (word.find("мм") != string::npos)
+            words.push_back(word);
+        
+        cin >> word;
+    }
+}
+void print_array(vector<string> &words) {
+    for (vector<string>::iterator it = words.begin(); it!=words.end() ; ++it)
+        cout << *it << ", ";
+}
 int main(){
     vector<string> words;
-    string word;
-    for (vector<string>::iterator it = words.begin(); it != words.end(); ++it) {
-        int found = it->find("мм");
-        if (found == string::npos) break;
-    }
+    filling_the_array(words);
+    cout << "Массив слов, содержащих мм: ";
+    print_array(words);
 }

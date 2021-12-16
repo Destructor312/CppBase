@@ -15,13 +15,10 @@ using namespace std;
 int main() {
     unsigned int x;
     int n = 0;
-
-    cout << "Input (example: 9): ";
     cin >> x;
 
     for (; x; n++)
         x &= (x - 1); // убираем младший бит
 
-    cout << "Answer: " << n;
-    return 0;
+    cout << "Answer: " << n << endl;
 }
