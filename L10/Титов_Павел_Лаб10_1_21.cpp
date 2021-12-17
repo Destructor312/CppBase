@@ -21,8 +21,8 @@ void filling_the_array(vector<string> &words) {
     }
 }
 void print_array(vector<string> &words) {
-    for (vector<string>::iterator it = words.begin(); it!=words.end() ; ++it)
-        cout << *it << ", ";
+    for (auto i : words)
+        cout << i << ", ";
 }
 int main(){
     vector<string> words;
