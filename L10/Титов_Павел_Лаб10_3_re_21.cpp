@@ -16,7 +16,7 @@ bool is_once(string str, char c){
 }
 
 string getDistinctLetters(string first, string second, string third) {
-    string agg = first + second + third; // aggregate)))
+    string agg = first + second + third;
 
     string temp = agg;
     agg.erase(0, agg.length());
@@ -30,9 +30,9 @@ string getDistinctLetters(string first, string second, string third) {
 }
 
 int main() {
-    string first = "hello";
-    string second = "hello";
-    string third = "q";
+    string first = "proger";
+    string second = "avtobus";
+    string third = "trainerr";
 
     cout << getDistinctLetters(first, second, third) << endl;
 }

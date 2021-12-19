@@ -26,7 +26,7 @@ int main() {
 }
 
 bool odz(int x, int t) {
-    bool one = (pow(x, 2) + 2*x*t + pow(t, 2)) != 0;
+    bool one = (pow(x, 2) + 2*x*t + pow(t, 2)) >= 0;
     bool two = (1 + pow(sin(x), 2) * pow(cos(x), 2)) != 0;
     bool three = (1 + pow(1 - pow((1 + pow(sin(x), 2) * pow(cos(x), 2)), 1/2), 1/2)) != 0;
     return one && two && three;

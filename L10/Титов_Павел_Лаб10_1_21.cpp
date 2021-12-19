@@ -15,8 +15,7 @@ void filling_the_array(vector<string> &words) {
     cin >> word;
     while (word != ".") {
         if (word.find("мм") != string::npos)
-            words.push_back(word);
-        
+            words.push_back(word);        
         cin >> word;
     }
 }
